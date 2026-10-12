@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cdc-rag"
+version = "0.1.0"
+description = "Perguntas sobre o Código de Defesa do Consumidor respondidas por um modelo local (Ollama)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy==2.0.2",
+    "fastapi==0.128.8",
+    "uvicorn==0.39.0",
+]
+
+[project.optional-dependencies]
+dev = ["httpx==0.28.1"]
+
+[project.scripts]
+cdc-rag = "cli:main"
+
+[tool.setuptools.package-data]
+"web" = ["static/*"]

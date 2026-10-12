@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Direitos do Consumidor</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Histórico" popover>
+      <p class="brand">Direitos do Consumidor<small>Respostas com base na Lei 8.078/1990</small></p>
+      <button class="new" type="button" id="new">Nova pergunta</button>
+      <p class="history-title" id="history-title">Perguntas anteriores</p>
+      <ul class="history" id="history" aria-labelledby="history-title"></ul>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <p class="brand">Direitos do Consumidor</p>
+        <button type="button" popovertarget="sidebar">Histórico</button>
+      </div>
+
+      <div class="thread" id="thread">
+        <div class="column" id="column" aria-live="polite">
+          <section class="empty" id="empty">
+            <h1>O que aconteceu na sua compra?</h1>
+            <p>Conte em poucas palavras. A resposta cita os artigos do Código de Defesa do Consumidor, e você pode abrir
+              cada artigo para ler o texto da lei.</p>
+            <ul class="suggestions">
+              <li><button type="button">Comprei pela internet e me arrependi. Posso devolver?</button></li>
+              <li><button type="button">O produto veio com defeito. Qual o prazo para reclamar?</button></li>
+              <li><button type="button">A loja pode exigir que eu compre outro produto junto?</button></li>
+              <li><button type="button">Fui cobrado a mais. Tenho direito a receber em dobro?</button></li>
+              <li><button type="button">Meu nome foi para o Serasa sem nenhum aviso. Isso pode?</button></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <div class="composer">
+        <form id="form">
+          <textarea id="input" rows="1" maxlength="1000" placeholder="Descreva sua situação"
+            aria-label="Sua pergunta"></textarea>
+          <button type="submit" id="send">Perguntar</button>
+        </form>
+        <p class="note">As respostas vêm de um modelo local e podem errar. Leia o artigo citado antes de agir.</p>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="article" aria-labelledby="article-title">
+    <form method="dialog"><button class="close" aria-label="Fechar">×</button></form>
+    <p class="law-source">Código de Defesa do Consumidor</p>
+    <h2 class="art-title" id="article-title">Art.<span class="num" id="article-num"></span></h2>
+    <div class="law-text" id="article-text"></div>
+  </dialog>
+
+  <script type="module" src="/static/app.js"></script>
+</body>
+
+</html>
